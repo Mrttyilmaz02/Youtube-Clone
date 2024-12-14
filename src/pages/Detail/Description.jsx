@@ -6,8 +6,8 @@ const Description = ({ video }) => {
 
   // ekrana basılacak text
   const text = isOpen
-    ? video.description
-    : video.description.slice(0, 150) + '...daha fazla';
+    ? video.data[0].description
+    : video.data[0].description.slice(0, 150) + '...daha fazla';
 
   return (
     <div
@@ -15,10 +15,10 @@ const Description = ({ video }) => {
       className="bg-secondary rounded p-2 mt-4 cursor-pointer hover:bg-opacity-80"
     >
       <div className="flex gap-4 mb-2">
-        <p className="font-bold">{millify(video.viewCount)} Görüntülenme</p>
+        <p className="font-bold">{millify(video.data[0].viewCount)} Görüntülenme</p>
 
         <p>
-          {new Date(video.publishDate).toLocaleDateString('tr', {
+          {new Date(video.data[0].publishDate).toLocaleDateString('tr', {
             day: 'numeric',
             month: 'short',
             year: 'numeric',

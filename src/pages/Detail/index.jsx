@@ -68,7 +68,7 @@ const Detail = () => {
 
         {/*TODO önerilen videolar */}
         <div className="flex flex-col gap-5 p-1">
-          {video?.relatedVideos.data.map(
+          {video?.data[0].relatedVideos.data.map(
             (item) =>
               item.type === "video" && <Card key={item.videoId} video={item} isRow />
           )}

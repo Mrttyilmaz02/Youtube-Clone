@@ -41,7 +41,7 @@ const Feed = () => {
         ) : error ? (
           <Error info={error} />
         ) : (
-          videos.map((i) => i.type === "video" && <Card key={i.videoId} video={i} />)
+          videos?.map((i) => i.type === "video" && <Card key={i.videoId} video={i} />)
         )}
       </div>
     </div>

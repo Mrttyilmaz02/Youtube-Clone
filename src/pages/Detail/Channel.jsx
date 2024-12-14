@@ -2,6 +2,7 @@ import { AiFillLike, AiFillDislike } from 'react-icons/ai';
 import { millify } from 'millify';
 
 const Channel = ({ video }) => {
+  console.log(video)
   return (
     <div className="flex  justify-between max-sm:flex-col">
       {/* sol */}
@@ -9,15 +10,14 @@ const Channel = ({ video }) => {
         <div className="flex gap-2 sm:gap-4 items-center">
           <img
             className="rounded-full size-10 sm:size-12"
-            src={video.channelThumbnail[0].url}
+            src={video.data[0].channelThumbnail[0].url}
           />
 
           <div>
-            <h4 className="font-bold">{video.channelTitle}</h4>
-            <p className="text-gray-400">{video.subscriberCountText}</p>
+            <h4 className="font-bold">{video.data[0].channelTitle}</h4>
+            <p className="text-gray-400">{video.data[0].subscriberCountText}</p>
           </div>
         </div>
-
         <button className="bg-white text-black px-3 py-1 sm:py-2 hover:bg-gray-400 transition rounded-full">
           Abone Ol
         </button>
@@ -27,7 +27,7 @@ const Channel = ({ video }) => {
       <div className="flex items-center bg-secondary rounded-full cursor-pointer max-sm:mt-3 max-sm:w-fit">
         <div className="py-1 px-3 sm:py-2 sm:px-4 flex items-center gap-2 font-bold border-r border-gray-500">
           <AiFillLike />
-          <span className="text-sm">{millify(video.likeCount)}</span>
+          <span className="text-sm">{millify(video.data[0].likeCount)}</span>
         </div>
 
         <div className="py-1 px-3 sm:py-2 sm:px-6">

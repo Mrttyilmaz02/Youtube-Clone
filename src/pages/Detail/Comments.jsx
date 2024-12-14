@@ -34,8 +34,8 @@ const Comments = ({ videoId }) => {
             placeholder="Yorum ekleyin..."
           />
 
-          {comments.data.map((i) => (
-            <div className="flex gap-2 sm:gap-3 items-start px-1 py-3 sm:py-4">
+          {comments.data.map((i,index) => (
+            <div key={index} className="flex gap-2 sm:gap-3 items-start px-1 py-3 sm:py-4">
               <img
                 src={i.authorThumbnail[0].url}
                 className="rounded-full size-8 sm:size-10"
